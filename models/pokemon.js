@@ -50957,5 +50957,5 @@ const pokemonData = [
       entreeforestlevel: "30"
     }
   }
-];
+]
 module.exports = pokemonData

@@ -1,23 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <title>Pokedex</title>
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.1.js"
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/static/styles.css">
 </head>
+<div class="index">
 <body>
-    <h1>Pokedex</h1>
-    <% for(let i = 0; i < pokeInfo.length; i++) { %>
-     <a href="/pokemon/<%= [i]  %>"><%= pokeInfo[i].name ;%></a>
-     <%= pokeInfo[i].id ;%>
-     <%= pokeInfo[i].type ; %>
-     <img src="<%= pokeInfo[i].img ;%>" alt="">
-     <%= pokeInfo[i].type ; %>
-
-   <%} %> 
-
+    <!-- <div class="index"> -->
+        <div id="pokemon-list"></div>
+        <h1>Pokedex</h1>
+        <a href="/pokemon/new"> <button id="new-button">New Pokemon</button></a><br>
+        <% for(let i=0; i < pokeInfo.length; i++) { %>
+            <img src="<%= pokeInfo[i].img ;%>" style ="max-width: 300px;"> 
+            <a href="/pokemon/<%= [i]  %>">
+                <%= pokeInfo[i].name ;%>
+            </a>
+            <%#= pokeInfo[i].id ;%>
+                <%#= pokeInfo[i].type ; %>                   
+                    <%} %> 
     
 </body>
+</div>
 </html>

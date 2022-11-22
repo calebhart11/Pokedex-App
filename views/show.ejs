@@ -4,25 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>View A Pokemon</title>
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
-    <%- include("./public/styles.css") %>
+    <link rel="stylesheet" href="/static/styles.css">
 </head>
+
 <body>
-    <img src="<%= pokemon[i].img ;%>" alt="">
-<h1><%= pokemon[i].name %></h1>
-<h3><%= pokemon[i].id %></h3>
-<h3><%= pokemon[i].type %></h3>
-<h3><%= pokemon[i].stats %></h3>
-<h3><%= pokemon[i].moves %></h3>
-<h3><%= pokemon[i].damages %></h3>
-<form>
-<a href="/pokemon/:id"></a>
-<a href="/pokemon/:id<%= index %>/edit"><button>Edit</button></a>
+<div class="show">
+        
+   
+   <img src="<%= pokemon.img ;%>" alt="">
+   <table>
+<tr><td></td><h1><%= pokemon.name %></h1></td></tr>
+<tr><td></td><h2><%= pokemon.id %></h2></td></tr>
+<tr><td></td><h2>Type: <%= pokemon.name %></h2></td></tr>
+<!-- <h3><%= pokemon.id %></h3>
+<h3>Type: <%=  pokemon.type %></h3> -->
+
+    <h2>Stats</h2>
+<tr><td><h3> HP: <%= pokemon.stats.hp %></h3></td></tr>
+<tr><td><h3> Attack: <%= pokemon.stats.attack %></h3></td></tr>
+<tr><td><h3>Defense: <%= pokemon.stats.defense %></h3></td></tr>
+<tr><td><h3>Special Attack: <%= pokemon.stats.spattack %></h3></td></tr>
+<tr><td><h3> Special Defense: <%= pokemon.stats.spdefense %></h3></td></tr>
+<tr><td><h3> Speed: <%= pokemon.stats.speed %></h3></td></tr>
+</table>
+
+    <a href="/pokemon"><button id="backbutton">back</button></a>
+<a href="/pokemon/:id<%= index %>"></a>
+<a href="/pokemon/<%= index %>/edit"><button id="editbutton">Edit</button></a>   
 <form action="/pokemon/<%= index %>?_method=DELETE" method="post">
-    <input type="submit" value="Delete">
+    <input type="submit" value="Delete">   
 </form>
 
-    
+
+
+</div>
 </body>
 </html>
