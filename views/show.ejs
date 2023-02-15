@@ -18,9 +18,7 @@
    <table>
 <tr><td></td><h1><%= pokemon.name %></h1></td></tr>
 <tr><td></td><h2><%= pokemon.id %></h2></td></tr>
-<tr><td></td><h2>Type: <%= pokemon.name %></h2></td></tr>
-<!-- <h3><%= pokemon.id %></h3>
-<h3>Type: <%=  pokemon.type %></h3> -->
+<tr><td></td><h2>Type: <%= pokemon.type %></h2></td></tr>
 
     <h2>Stats</h2>
 <tr><td><h3> HP: <%= pokemon.stats.hp %></h3></td></tr>
@@ -31,11 +29,11 @@
 <tr><td><h3> Speed: <%= pokemon.stats.speed %></h3></td></tr>
 </table>
 
-    <a href="/pokemon"><button id="backbutton">back</button></a>
+<a href="/pokemon"><button id="backbutton">back</button></a>
 <a href="/pokemon/:id<%= index %>"></a>
 <a href="/pokemon/<%= index %>/edit"><button id="editbutton">Edit</button></a>   
 <form action="/pokemon/<%= index %>?_method=DELETE" method="post">
-    <input type="submit" value="Delete">   
+<input class="delete" type="submit" value="Delete">   
 </form>
 
 
