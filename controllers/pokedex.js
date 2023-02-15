@@ -10,11 +10,13 @@ const app = express()
 
 //=================ROUTES/ROUTERS
 //Index
-router.get("/pokemon", (req, res) =>{
+router.get("/", (req, res) =>{
     res.render("index.ejs", {
         pokeInfo: pokemonData
     });
+    res.redirect("/pokemon")
 });
+
 //new
 router.get("/new", (req, res) => {
     res.render("new.ejs");
